@@ -28,5 +28,5 @@ do
 
 		fi
 	done
-#	echo -e "\n Server $server is not reachable after $i attempts \n"
+	[ $status -ne 0 ] && [ $i -ge 6 ] && echo -e "\n After $i attempts, Server $server is not reachable after $i attempts \n"
 done
