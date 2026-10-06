@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Hello Guys... Radhe radhe"
+echo "	"
+echo "Radhe Radhe"
+echo "	"
+
+
+echo "We are using shell $SHELL"
+
+echo "lets see the status of selinux"
+status=$(getenforce)
+echo "SeLinux is in "$status" mode"

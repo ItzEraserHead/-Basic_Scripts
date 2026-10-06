@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo -e "Name of Script: \t $0 \n"
+
+num1=$1
+
+echo -e "\nNumber passed is:\t $num1 \n"
+
+if [ $num1 == 10 ]; then	#Here we can use -eq or ge as well
+	echo "Number is equal to 10"
+	exit 1
+elif
+	[ $num1 -gt 10 ]; then
+	echo "Number is greter than 10"
+else
+	echo "Number is less than 10"
+fi

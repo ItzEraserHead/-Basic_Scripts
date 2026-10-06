@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo -e "Run the script:\t $0 <filename/dirname> \n"
+
+if [ $# -eq 0 ]; then
+	echo -e "Please provide a file name to proceed \n"
+	exit 1
+fi
+
+if [ ! -e "$1" ]; then
+	echo -e "path does not exists \n"
+	exit 1
+else
+	echo -e "path is valid \n"
+fi
+
+if [ -f "$1" ]; then
+	echo "this is a file"
+elif [ -d "$1" ]; then
+	echo "this is a directory"
+fi
+
+if [ -r "$1" ]; then
+	echo "read permission: Yes"
+else
+	echo "read permission: No"
+fi
+
+if [ -w "$1" ]; then
+	echo "write permission: yes"
+else
+	echo "write permission: no"
+fi
+
+if [ -x "$1" ]; then
+	echo "execute permission: yes"
+else
+	echo "execute permission: no"
+fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -e "\t We are learning Output Redirection \t\n\n"
+
+
+#echo -e "Some successfull executions \t"
+date
+echo "$0"
+echo `pwd`
+
+#echo -e "\n\n Some Errors: "
+ls -lrt /home/mandar

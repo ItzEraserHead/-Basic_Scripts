@@ -1,0 +1,8 @@
+#!/bin/bash
+
+user1=""
+
+while [ "$user1" != "admin" ]
+do
+	read -p "Enter the user name again: " user1
+done       

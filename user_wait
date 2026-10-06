@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo -e "Run: $0 <user_name> \n"
+
+if [ $# -eq 0 ]; then
+	echo "Need args to run the script"
+	exit 1
+fi
+
+while ! getent passwd "$1" >/dev/null 2>&1
+do
+	echo "user doed not exist"
+	sleep 2
+done
+
+echo "user exist"

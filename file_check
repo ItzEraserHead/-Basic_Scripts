@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo -e "Run the script:\t $0 <filename/dirname> \n"
+
+if [ $# -eq 0 ]; then
+	echo -e "Please provide a file name to proceed \n"
+	exit 1
+fi
+
+if [ -f "$1" ]; then
+	echo "this is a file"
+elif [ -d "$1" ]; then
+	echo "this is a directory"
+else
+	echo "path does not even exists"
+fi

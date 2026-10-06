@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo "fetch details of user, username shared as arguement"
+
+echo -e "Name of the Script is:		$0 \n"
+
+user=$1
+
+data=$(getent passwd "$user")
+status=$?
+
+if [ $status -ne 0 ]; then
+	echo -e "\n User Account $user is not present on server \n"
+	exit 1
+else
+	echo -e "\n User account $user is present on server \n"
+fi
+
+IFS=: read -r u_account _ uid gid comment home shell <<< "$data"
+
+echo -e "\t Below are the user details \t".
+
+echo -e "User Name:	$u_account"
+echo -e "User ID:	$uid"
+echo -e "Group ID:	$gid"
+echo -e "Name:		$comment"
+echo -e "Home:		$home"
+echo -e "Sheel:		$shell"
+

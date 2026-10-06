@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "======================================"
+echo "Script started: $(date)"
+echo "======================================"
+
+echo "SUCCESS: Checking current user"
+whoami
+
+echo "SUCCESS: Checking current directory"
+pwd
+
+echo "SUCCESS: Listing /etc/passwd"
+ls -l /etc/passwd
+
+echo "SUCCESS: Checking disk space"
+df -h /
+
+echo "ERROR TEST: Trying to access missing file"
+cat /home/oingale/does_not_exist.txt
+
+echo "ERROR TEST: Trying to access missing directory"
+ls -lrt /home/mandar
+
+echo "SUCCESS: Checking current date"
+date
+
+echo "ERROR TEST: Trying an invalid command"
+this_command_does_not_exist
+
+echo "======================================"
+echo "Script finished: $(date)"
+echo "======================================"

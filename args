@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo -e "\t We will be learning about arguments here"
+
+echo -e "\n $0 : This will tell us about the script name \n"
+echo -e "\n $1 : This will tell us what is the first argument passed to our script"
+echo -e "\n $2 : This will tell us about the second argument passed to our script"
+echo -e "\n $3 : For third argument "'$3'", and so on, add number after $ to  get arg value"
+echo -e "\n $# : This # after $ will tell us number of args we have passed to the script"
+echo -e "\n $@ : Will list all the args we have passed to our script"

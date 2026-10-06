@@ -1,0 +1,93 @@
+/bin/sh: line 1: /home/oingale/linux_script/cron_test: No such file or directory
+======================================
+Script started: Sunday 04 October 2026 06:58:01 PM IST
+======================================
+SUCCESS: Checking current user
+oingale
+SUCCESS: Checking current directory
+/home/oingale
+SUCCESS: Listing /etc/passwd
+-rw-r--r--. 1 root root 2339 Sep 29 19:59 /etc/passwd
+SUCCESS: Checking disk space
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cs-root   17G  3.1G   14G  19% /
+ERROR TEST: Trying to access missing file
+cat: /home/oingale/does_not_exist.txt: No such file or directory
+ERROR TEST: Trying to access missing directory
+ls: cannot access '/home/mandar': No such file or directory
+SUCCESS: Checking current date
+Sunday 04 October 2026 06:58:01 PM IST
+ERROR TEST: Trying an invalid command
+/home/oingale/linux_script/redirection2: line 29: this_command_does_not_exist: command not found
+======================================
+Script finished: Sunday 04 October 2026 06:58:01 PM IST
+======================================
+======================================
+Script started: Sunday 04 October 2026 07:00:01 PM IST
+======================================
+SUCCESS: Checking current user
+oingale
+SUCCESS: Checking current directory
+/home/oingale
+SUCCESS: Listing /etc/passwd
+-rw-r--r--. 1 root root 2339 Sep 29 19:59 /etc/passwd
+SUCCESS: Checking disk space
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cs-root   17G  3.1G   14G  19% /
+ERROR TEST: Trying to access missing file
+cat: /home/oingale/does_not_exist.txt: No such file or directory
+ERROR TEST: Trying to access missing directory
+ls: cannot access '/home/mandar': No such file or directory
+SUCCESS: Checking current date
+Sunday 04 October 2026 07:00:01 PM IST
+ERROR TEST: Trying an invalid command
+/home/oingale/linux_script/redirection2: line 29: this_command_does_not_exist: command not found
+======================================
+Script finished: Sunday 04 October 2026 07:00:01 PM IST
+======================================
+======================================
+Script started: Sunday 04 October 2026 07:02:01 PM IST
+======================================
+SUCCESS: Checking current user
+oingale
+SUCCESS: Checking current directory
+/home/oingale
+SUCCESS: Listing /etc/passwd
+-rw-r--r--. 1 root root 2339 Sep 29 19:59 /etc/passwd
+SUCCESS: Checking disk space
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cs-root   17G  3.1G   14G  19% /
+ERROR TEST: Trying to access missing file
+cat: /home/oingale/does_not_exist.txt: No such file or directory
+ERROR TEST: Trying to access missing directory
+ls: cannot access '/home/mandar': No such file or directory
+SUCCESS: Checking current date
+Sunday 04 October 2026 07:02:01 PM IST
+ERROR TEST: Trying an invalid command
+/home/oingale/linux_script/redirection2: line 29: this_command_does_not_exist: command not found
+======================================
+Script finished: Sunday 04 October 2026 07:02:01 PM IST
+======================================
+======================================
+Script started: Sunday 04 October 2026 07:04:01 PM IST
+======================================
+SUCCESS: Checking current user
+oingale
+SUCCESS: Checking current directory
+/home/oingale
+SUCCESS: Listing /etc/passwd
+-rw-r--r--. 1 root root 2339 Sep 29 19:59 /etc/passwd
+SUCCESS: Checking disk space
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cs-root   17G  3.1G   14G  19% /
+ERROR TEST: Trying to access missing file
+cat: /home/oingale/does_not_exist.txt: No such file or directory
+ERROR TEST: Trying to access missing directory
+ls: cannot access '/home/mandar': No such file or directory
+SUCCESS: Checking current date
+Sunday 04 October 2026 07:04:01 PM IST
+ERROR TEST: Trying an invalid command
+/home/oingale/linux_script/redirection2: line 29: this_command_does_not_exist: command not found
+======================================
+Script finished: Sunday 04 October 2026 07:04:01 PM IST
+======================================

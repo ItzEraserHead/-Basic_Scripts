@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo -e "\n Useage: $0 <server1> <server2> <server3> \n"
+
+[ $# -eq 0 ] && echo -e "\n We need servername as args to run this script \n" && exit 1
+
+echo -e "\n Server Names are: \t $@ "
+
+for server in "$@"
+do
+	i=1 #variable to track attempts of ping, reset to 1 after coming out form while loop
+
+	echo -e "Checking Server : "$server" \n"
+
+	while [ $i -le 5 ]
+	do
+		ping -c 1 "$server"
+		status=$?
+
+		if [ $status -eq 0 ]; then
+			echo -e "Server is reachable \n"
+			break
+		else
+			echo -e "\n Attempt No "$i": \t Server is not reachable"
+
+			i=$((i + 1))
+			sleep 2
+
+		fi
+	done
+#	echo -e "\n Server $server is not reachable after $i attempts \n"
+done

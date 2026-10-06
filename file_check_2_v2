@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo -e "Run the script:\t $0 <filename/dirname> \n"
+
+if [ $# -eq 0 ]; then
+	echo -e "Please provide a file name to proceed \n"
+	exit 1
+fi
+
+if [ ! -e "$1" ]; then
+	echo -e "path does not exists \n"
+	exit 1
+else
+	echo -e "path is valid \n"
+fi
+
+[ -f "$1" ] && echo "Type: File"
+[ -d "$1" ] && echo "Type: Dir"
+
+[ -r "$1" ] && echo "readable: yes" || echo "readable: No"
+[ -w "$1" ] && echo "writeable: yes" || echo "writeable: No"
+[ -x "$1" ] && echo "executable: yes" || echo "executable: No"

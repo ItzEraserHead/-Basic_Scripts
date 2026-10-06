@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -e "How to run script: $0 <user1> <user2> <user3> \n"
+
+if [ $# -eq 0 ]; then
+	echo -e "\n We need args to run this code"
+	exit 1
+fi
+
+echo -e "Total number of args passed: \t $# \n"
+echo -e "Args passed are as follows: \t $@ \n"
+
+for i in $@
+do
+	user=$i
+	data=$(getent passwd "$user")
+	status=$?
+	echo -e "Checking User: $user \n"
+
+	if [ $status -eq 0 ]; then
+		echo -e "User exist \n"
+	else
+		echo -e "User does not exist \n"
+	fi
+done

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "We will use this to see the data for user from /etc/passwd file"
+
+read -p "enter the name of user:	" user
+
+data=$(getent passwd $user)
+status=$?
+
+if [ $status -ne 0 ]; then
+	echo "$user is not present on server"
+	exit 1
+else
+	echo "$user is present on server"
+fi
+
+IFS=: read -r u_account _ uid gid name home shell <<< "$data"
+
+echo -e "\n User Details are as follows \n"
+echo "User Account:     $u_account"
+echo "User ID:          $uid"
+echo "Group ID:         $gid"
+echo "User Name:        $name"
+echo "Home Dir:	$home"
+echo "Shell Assigned:   $shell"

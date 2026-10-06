@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo -e "How to run the script:\t $0 <number>\n"
+
+num1=$1
+
+if [ $# -eq 0 ]; then
+	echo -e "\n This script needs a number to be passwd as arguement \n"
+	exit 1
+fi
+
+if [[ ! $num1 =~ ^[0-9]+$ ]]; then
+	echo -e "Please provide a valid number and not a string \n"
+	exit 1
+fi
+
+echo -e "Number entered by the user is : \t  $num1 \n"
+
+if [ $num1 -lt 10 ]; then
+	echo -e "Number $num1 is less than 10 \n"
+elif [ $num1 -eq 10 ]; then
+	echo -e "Number $num1 is equal to 10 \n"
+elif [ $num1 -lt 20 ]; then
+	echo -e "Number $num1 is greater than 10 \n"
+else
+	echo -e "Number is 20 or greater \n"
+fi
