@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo -e "use: $0 <server name> \n"
+
+if [ $# -eq 0 ]; then
+	echo -e "Server name is needed to run the script \n "
+	exit 1
+fi
+
+echo -e "waitng for server $1 to become reachable... \n"
+
+until ping -c 1 "$1" >/dev/null 2>&1
+do
+	echo "Server is not reachable yet..."
+	sleep 2
+done
+
+echo -e "\n $1 is now reachable"
