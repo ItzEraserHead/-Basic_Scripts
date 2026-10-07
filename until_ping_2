@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo -e "useage: $0 <server name>"
+
+if [ $# -eq 0 ]; then
+	echo -e "\n we need a server name for thsi script to work \n"
+	exit 1
+fi
+
+attempt=1
+
+until [ $attempt -gt 5 ]
+do 
+	echo -e "\n Check Server $1 : Attempt $attempt"
+	ping -c 1 "$1" >/dev/null 2>&1
+	status=$?
+
+	[ $status -eq 0 ] && echo -e "\n $1 is now reachable " && break
+
+	attempt=$((attempt+1))
+	
+done
+
+#[ $status -eq 0 ] && echo -e "server not reachable after 5 attempts"
