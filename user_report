@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -e "Useage:\t $0 <value> \n"
+
+if [ $# -eq 0 ]; then
+	echo -e "we need a value...Sir.... \n"
+	exit 1
+fi
+
+range=$1
+
+echo -e "\n USer Report As Follows :\n"
+awk -F: '
+BEGIN {printf "%-15s %-8s %s \n","UserName","UID","SHELL"}
+$3 > $range {printf "%-15s %-8s %s \n", $1, $3, $7}
+END {printf "\t No More Data To Print "}
+' /etc/passwd
+
+
+#This script wont work, as variables in Bash are Global
+#But variables of bash cannot be used in awk in the way we have used it
+#Proper syntax need to be followed and we will fo it later on
+
+
+#For now, awk logic is fine.... gg.....
