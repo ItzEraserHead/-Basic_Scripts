@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo -e "\n Usage: $0 <number>"
+
+if [[ $# -eq 0 || ! ! $1 =~ ^[0-9]+$ ]]; then
+	echo -e "\n we do need a number here..."
+	read -p "Enter a number only " range
+	if [[ -z $range || ! $range =~ ^[0-9]+$ ]]; then
+		echo -e "\n Rehne Doh...Tumse na hoga bsdk.."
+		exit 1
+	fi
+else
+	range=$1
+fi
+
+echo -e "Range is: "$range""
+
+awk -v limit=$range -F: '
+BEGIN { printf "%-15s %-8s %s \n","UserName","UID","SHELL" }
+$3 > limit { printf "%-15s %-8s %s \n", $1, $3, $7; count++ }
+END { printf "\n Total Userd:\t %s \n",count }
+' /etc/passwd

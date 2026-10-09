@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo -e "\nUsage: $0 <number> \n"
+
+if [[ $# -eq 0 || ! $1 =~ ^[0-9]+$ ]]; then
+	echo -e "\n You need to enter a number \n"
+	read -p " Enter a number " range
+	if [[ -z $range || ! $range =~ ^[0-9]+$ ]]; then
+		echo -e "\n It was not a number... run again ... \n"
+		exit 1
+	fi
+else
+	range=$1
+fi
+
+awk -v limit=$range -F: '
+$3 >= limit { 
+	shell_count[$7]++ 
+}
+END {
+	for (i in shell_count)
+		print i, ":", shell_count[i]
+}' /etc/passwd
